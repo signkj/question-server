@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseOptionsService } from 'src/database/service/database.options.service';
 import { DatabaseModule } from 'src/database/database.module';
 import { ConfigModule } from '@nestjs/config';
+import { QuestionModule } from 'src/crud/question/question.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ConfigModule } from '@nestjs/config';
         databaseOptionsService.createTypeOrmOptions(),
     }),
     DatabaseModule,
+    QuestionModule,
   ],
   controllers: [AppController],
 })

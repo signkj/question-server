@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { QuestionService } from './question.service';
 import { CreateQuestionDto } from './dto/create-question.dto';
@@ -20,14 +21,22 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.questionService.findOne(+id);
+  }
+
   @Get()
   findAll() {
     return this.questionService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.questionService.findOne(+id);
+  @Put(':id')
+  insertQuestion(
+    @Param('id') id: string,
+    @Body() updateQuestionDto: UpdateQuestionDto,
+  ) {
+    return this.questionService.update(+id, updateQuestionDto);
   }
 
   @Patch(':id')

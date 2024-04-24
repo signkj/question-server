@@ -24,12 +24,16 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) 구글 설문지 RestAPI 서버
 
-## Installation
+## API
 
 ```bash
-$ npm install
+POST /question : 설문지 등록
+GET /question : 등록 설문지 조회
+GET /question/[id] : 등록 설문지 조회
+
+
 ```
 
 ## Running the app
