@@ -29,12 +29,17 @@
 ## API
 
 ```bash
-POST /question : 설문지 등록
-GET /question : 등록 설문지 조회
-GET /question/[id] : 등록 설문지 조회
+# POST /question : 설문지 등록
+
+# GET /question : 등록 설문지 전체 조회
+
+# GET /question/[id] : 등록 설문지 조회
+
 
 
 ```
+
+---
 
 ## Running the app
 
