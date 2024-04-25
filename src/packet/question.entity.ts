@@ -19,6 +19,7 @@ export class QuestionMain extends BaseAutoEntity {
 export class Question extends BaseAutoEntity {
   @Column({ default: 0, comment: 'id' })
   qmain_id: number;
+
   @Column({ default: 1, comment: '1.단답형, 2.객관식, 3.체크박스' })
   type: number;
   @Column({ default: '', comment: '설문지제목' })
@@ -39,10 +40,10 @@ export class QuestionOption extends BaseAutoEntity {
 export class QuestionRecv extends BaseAutoEntity {
   @Column({ default: 0, comment: '질문id' })
   ques_id: number;
+  @Column({ default: 0, comment: '하위질문id' })
+  ques_sub_id: number;
   @Column({ default: '', comment: '생성자' })
   email: string;
-  @Column({ default: 1, comment: '1.단답형, 2.객관식, 3.체크박스' })
-  type: number;
   @Column({ default: '', comment: '응답' })
   answer: string;
 }

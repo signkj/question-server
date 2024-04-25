@@ -1,16 +1,25 @@
-import { IsString, IsNotEmpty, IsNumber, IsBoolean } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsNumber,
+  IsArray,
+  IsEmail,
+} from 'class-validator';
 
-export class QuestionNewDto {
+export class WriteMyDto {
   @IsNotEmpty()
   @IsNumber()
-  type: number;
+  id: number;
   @IsNotEmpty()
   @IsString()
-  name: string;
+  answer: string;
+}
+
+export class WriteQuestionDto {
+  @IsEmail()
   @IsNotEmpty()
-  @IsString()
-  option: string;
+  email: string;
   @IsNotEmpty()
-  @IsBoolean()
-  optionyn: boolean;
+  @IsArray()
+  questions: WriteMyDto[];
 }
