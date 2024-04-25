@@ -34,6 +34,8 @@ export class QuestionOption extends BaseAutoEntity {
   ques_id: number;
   @Column({ default: '', comment: '옵션이름' })
   name: string;
+  @Column({ default: 0, comment: '결과' })
+  choice: number;
 }
 
 @Entity('question_recv')

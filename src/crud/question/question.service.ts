@@ -165,6 +165,11 @@ export class QuestionService {
         answer: q.answer,
       });
       await this.repoQuestionRecv.save(newQ);
+
+      this.repoQuestionOption.findOneBy({ ques_id: q.id }).then((result) => {
+        result.name === q.answer ? (result.choice += 1) : (result.choice += 0);
+        this.repoQuestionOption.save(result);
+      });
     });
 
     return {
